@@ -1,0 +1,13 @@
+*.pyc
+*.swp
+*.swo
+*.swn
+*.wsgi
+
+__pycache__/
+.sass-cache/
+/media/uploads/
+.idea/
+/.project
+/social.sql
+node_modules/
