@@ -3,3 +3,5 @@ south
 django-grappelli
 django-tinymce
 django-flatblocks
+django-filebrowser
+pillow
