@@ -21,10 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '4v=^1h4hwd^niw*(!=(6@hu*=ws&2sbisu4d!+i+ivx-&mgnnl'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-TEMPLATE_DEBUG = True
+DEBUG = TEMPLATE_DEBUG = True 
 
 ALLOWED_HOSTS = []
 
@@ -32,7 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'grappelli',
+    'grappelli',    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,11 +63,15 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+            'default': {
+                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                 'NAME': 'lawfarmer',
+                 'USER': 'postgres',
+                 'PASSWORD': 'postgres',
+                 'HOST': 'localhost',
+                 'PORT': '',
+               }
+        }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/

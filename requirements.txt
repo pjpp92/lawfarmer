@@ -3,5 +3,5 @@ Pillow==2.7.0
 South==1.0.2
 django-filebrowser==3.5.7
 django-flatblocks==0.8
-django-grappelli==2.6.3
+django-grappelli==2.5.6
 django-tinymce==1.5.3
