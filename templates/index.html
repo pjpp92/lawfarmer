@@ -18,17 +18,18 @@
                 <span class="day">{{post.data}}</span>
             </div>
             <div class="article_badge">
-            <a href="#" rel="tag">
-                {{ post.thema.title }}
-            </a>
-
+                {% for tag in post.thema.all %}
+                     <a href="/?tags={{tag}}" rel="tag">
+                        {{ tag }}
+                     </a>
+                {% endfor %}
         </div>
             <div class="clr">
 
             </div>
             <h2 class="article_title title">
                 <span>
-                    <a href="#" title="title">
+                    <a href="/article?id={{post.pk}}">
                         {{ post.title }}
                     </a>
                 </span>
@@ -65,3 +66,37 @@
 {% endfor %}
 {% endif %}
 {% endblock %}
+
+{% block paginator %}
+
+<div class="blog-pager" id="blog-pager">
+    {% if posts.has_previous %}
+        <span class="showpage">
+            <a href="?page=1{% if tag_url %}&tags={{ tag_url }}{% endif %}">
+                <<
+            </a>
+        </span>
+        <span class="showpageNum">
+            <a href="?page={{ posts.previous_page_number }}{% if tag_url %}&tags={{ tag_url }}{% endif %}">
+                <
+            </a>
+        </span>
+    {% endif %}
+    <span class="showpagePoint">
+        {{ posts.number }}
+    </span>
+    {% if posts.has_next %}
+        <span class="showpageNum">
+            <a href="?page={{ posts.next_page_number }}{% if tag_url %}&tags={{ tag_url }}{% endif %}">
+                >
+            </a>
+        </span>
+        <span class="showpageNum">
+            <a href="?page={{ posts.paginator.num_pages }}{% if tag_url %}&tags={{ tag_url }}{% endif %}">
+                >>
+            </a>
+        </span>
+    {% endif %}
+</div>
+{% endblock %}
+

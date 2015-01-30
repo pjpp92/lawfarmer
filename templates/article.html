@@ -2,6 +2,7 @@
 {% block content %}
 
 {% load flatblock_tags %}
+{% if post %}
 <div class="post-outer">
 <div class="post_hentry grid_item">
 <div class="post-body entry-content" id="post-body-2141782714140285451">
@@ -13,7 +14,7 @@
                 <i class="fa fa-bookmark">
 
                 </i>
-                <span class="day"></span>
+                <span class="day">{{post.data}}</span>
             </div>
             <div class="article_badge">
             <a href="#" rel="tag">
@@ -27,13 +28,13 @@
             <h2 class="article_title title">
                 <span>
                     <a href="#" title="title">
-                        foo
+                        {{post.title}}
                     </a>
                 </span>
             </h2>
             <div class="article_excerpt">
                 <p>
-                    bar
+                    {{post.content | safe }}
                 </p>
             </div>
             <div class="clr">
@@ -51,9 +52,132 @@
         </div>
     </div>
 </div>
-<div style="clear: both;"></div>
+{% if comments %}
+
+    <div style="background-color:#fff;margin-top:75px">
+        <div style="
+                background: url(media/img/sep.png) top repeat-x white;
+                clear: both;
+                font-size: 13px;
+                line-height: 23px;
+                padding: 20px;">
+
+                <h3 style="font-family: lato;
+                padding-bottom: 0;
+                letter-spacing: 2px;
+                position: relative;
+                z-index: 10;
+                background: rgb(220, 177, 48);
+                height: 38px;
+                line-height: 38px;
+                padding: 0px 20px;
+                text-align: center;
+                font-size: 14px;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+                text-transform: uppercase;
+                display: table;
+                margin: 0px auto;
+                top: -21px;">Komentarz:</h3>
+            </div>
+        {% for comment in comments %}
+        <div style="clear: both;"></div>
+        <div style="width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            padding-bottom:20px;"
+        >
+            <div style="display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;"
+            >{{ comment.author_email }} {{ comment.data }}</div>
+            <div style=" margin-left: auto;
+                margin-right: auto;
+                display: block;
+                width: 85%;
+                margin-top:20px;
+                padding-bottom:30px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #BBB;
+                margin-bottom:30px;"
+                 >{{ comment.content }}</div>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endif %}
+<div style="background-color:#fff;margin-top:75px">
+    <div style="
+            background: url(media/img/sep.png) top repeat-x white;
+            clear: both;
+            font-size: 13px;
+            line-height: 23px;
+            padding: 20px;">
+
+            <h3 style="font-family: lato;
+            padding-bottom: 0;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 10;
+            background: rgb(220, 177, 48);
+            height: 38px;
+            line-height: 38px;
+            padding: 0px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+            display: table;
+            margin: 0px auto;
+            top: -21px;">Komentarz:</h3>
+        </div>
+    <form action="" method="POST" style="width:85%;margin-left:auto;margin-right:auto;display:block;">
+        {% csrf_token %}
+
+        <input style="width:100%;margin-bottom:2em;" type="email" name="author_email" placeholder="Adres email" required>
+        <textarea style="width:100%;margin-bottom:1em;" name="content" rows="4"  id="commentBodyField"  placeholder="Treść komentarza ..."></textarea>
+        <div class="article_entry-footer" style="margin-top:10px;">
+            <div class="meta-item" style="display:block;float:right;">
+                <input type="submit" value="Wyślij" style="background: #DCB130;border: 1px solid #DCB130;color: #FFFFFF !important;z-index: 99;font-family: Lato;text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 10px;
+                    margin-top: 0;
+                    display: inline-block;
+                    line-height: 1;
+                    padding: 12px 14px;
+                    position: relative;
+                    text-decoration: none;
+                    -moz-transition: all 0.3s ease 0s;
+                    -webkit-transition: all 0.3s ease 0s;
+                    -o-transition: all 0.3s ease 0s;
+                    transition: all 0.3s ease 0s;
+                    -webkit-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    -ms-border-radius: 3px;
+                    -o-border-radius: 3px;
+                    border-radius: 3px;">
+            </div>
+            <div class="meta-item meta-item-share">
+                <div class="soc_sharing">
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <div style="clear: both;"></div>
+</div>
 </div>
 </div>
 </div>
 
+
+{% endif %}
 {% endblock %}
+

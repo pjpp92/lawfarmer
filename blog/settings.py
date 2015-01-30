@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'grappelli',    
+    'grappelli',
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +42,8 @@ INSTALLED_APPS = (
     'main',
 
     'tinymce',
+    'sorl.thumbnail',
+    'mce_filebrowser',
     'south',
     'flatblocks',
 )
@@ -110,3 +113,8 @@ STATIC_ROOT = (
 )
 
 STATIC_URL = '/static/'
+
+
+TINYMCE_DEFAULT_CONFIG = {
+  'file_browser_callback': 'mce_filebrowser'
+}
