@@ -1,4 +1,3 @@
-
 *, *:before, *:after {
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
@@ -73,11 +72,13 @@ Wrappers
     }
 .header-wrapper {
     background-image: url("media/img/owies.jpg");
-    height: 100vh;
+    height: 50vh;
     display: inline-block;
     float: left;
     width: 100%;
     border-bottom: 1px solid #eaeaea;
+    background-size: cover;
+    background-position: right;
 }
 .main-wrapper { width:70%; float:left; }
 .sidebar-wrapper { width:30%; float: right; }
@@ -366,6 +367,7 @@ position: relative;
 float: left;
 display: block;
 margin: 0 2px 40px 2px;
+width: 100%;
 }
 .isotope, .isotope .isotope-item {
 -webkit-transition-duration: 0.8s;
@@ -384,6 +386,7 @@ float: left;
 display: block;
 min-height:1px;
 overflow:visible;
+width: 100%;
 }
 .half_grid, .half_grid .isobrick-inner {
 width: 360px;
@@ -858,19 +861,10 @@ top: -21px;
 .sidebar a {
 color: #333;
 }
-.sidebar .widget {
-border-radius: 1px;
-box-shadow: rgb(0, 0, 0) 1px 1px 10px -5px;
--webkit-box-shadow: rgb(0, 0, 0) 1px 1px 10px -5px;
-background:url(http://4.bp.blogspot.com/-FFO4Fn_SNVA/VK6u77-FbHI/AAAAAAAAAdo/3L-m1Ab9KKs/s1600/sep.png) top repeat-x white;
-clear: both;
-font-size: 13px;
-line-height: 23px;
-margin-bottom: 60px;
-padding:20px;
-}
+
 .sidebar ul { margin: 0; padding: 0; list-style: none; }
 .sidebar li{
+text-align: center;
 border-bottom: 1px solid #F1f4f9;
 line-height: normal;
 list-style: none;
@@ -888,7 +882,7 @@ display: block;
 font-size: 14px;
 line-height: 23px;
 margin: 0;
-padding: 80px 0 60px;
+padding: 30px 0 20px;
 text-align: center;
 }
 .footer a {color: #eee;}
@@ -992,7 +986,7 @@ Custom Widget CSS
 .cloud-label-widget-content .label-size:hover a { color: #555 !important; }
 .cloud-label-widget-content .label-size .label-count { color: #555; padding: 5px 0; float: left; }
 /***** Popular Post *****/
-.PopularPosts .item-thumbnail img,.featured_thumb img {
+.PopularPosts  img,.featured_thumb img {
 display: block;
 float: left;
 height: 72px;
@@ -1008,6 +1002,7 @@ text-transform: uppercase;
 letter-spacing: 1px;
 line-height: 1.5;
 padding-top: 5px;
+text-align: center;
 }
 .item-snippet {
 display: none;
@@ -1200,7 +1195,3 @@ div#footer{margin:0 25px}
 .post-body img{  max-width: 230px; }
 .comments .comments-content .comment-replies {    margin-left: 0;    }
 }
-/*****************************************
-Hiding Header Date and Feed Links
-******************************************/
-h2.date-header,span.blog-admin{display:none;}

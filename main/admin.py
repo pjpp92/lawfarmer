@@ -1,8 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
 from .models import Tag, Post, Comment
 
+from mce_filebrowser.admin import MCEFilebrowserAdmin
+
+class PostAdmin(MCEFilebrowserAdmin):
+    pass
+
 admin.site.register(Tag)
-admin.site.register(Post)
+admin.site.register(Post, PostAdmin)
 admin.site.register(Comment)
