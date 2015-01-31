@@ -26,3 +26,6 @@ class Comment(models.Model):
 
     def  __unicode__(self):
         return u'%s %s' % (self.content, self.data)
+
+    def author_mail_name(self):
+        return self.author_email.split('@')[0]
