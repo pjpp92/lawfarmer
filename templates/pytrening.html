@@ -110,18 +110,18 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{{ MEDIA_URL }}py/img/pylady_geek.png" class="img-responsive" alt="">
+
                     </a>
                 </div>
 
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#templates" class="portfolio-link" data-toggle="modal">
+                    <a href="#sql" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{{ MEDIA_URL }}py/img/jinja.png" class="img-responsive" alt="">
+                        <img src="{{ MEDIA_URL }}py/img/logo.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
 
@@ -132,7 +132,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{{ MEDIA_URL }}py/img/form.jpg" class="img-responsive" alt="">
+
                     </a>
                 </div>
 
@@ -274,7 +274,7 @@
                         Znajdź wszystkich reżyserów który żyją ponad 3285000000 sekund :D
                     </p>
                 </div>
-                
+
 
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">
@@ -309,7 +309,7 @@
     </div>
 
     <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="request" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="sql" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -325,206 +325,80 @@
                             <hr class="star-primary">
                             <p class='code-txt'>Stwórzcie plik z rozszerzeniem .py a następnie wklejcie do niego poniższy kod:</p>
                             <span class="code">
-                                from flask import Flask<br>
+                                import os<br><br>
+
+                                from flask import Flask <br>
+                                from flask.ext.sqlalchemy import SQLAlchemy<br><br>
+
+                                basedir = os.path.abspath(os.path.dirname(__file__))<br><br>
+
                                 app = Flask(__name__)<br>
+                                app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')<br>
+                                db = SQLAlchemy(app)<br><br>
+
+                                class Director(db.Model):<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;id = db.Column(db.Integer, primary_key=True)<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;name = db.Column(db.String(80))<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;year_of_birth = db.Column(db.Integer)<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;alive = db.Column(db.Boolean(create_constraint=True, name=None))<br><br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;def __repr__(self):<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return '&#60;Director: %s&#62;' % self.name<br><br>
+
+                                class Movie(db.Model):<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;id = db.Column(db.Integer, primary_key=True)<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;title = db.Column(db.String(80), unique=True)<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;type = db.Column(db.String(80))<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;director_id = db.Column(db.Integer, db.ForeignKey(Director.id), primary_key=True)<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;year_created = db.Column(db.Integer)<br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;director = db.relationship('Director', foreign_keys='Movie.director_id')<br><br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;def __repr__(self):<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return '&#60;Movie: %s&#62;' % self.title<br>
+
+
+
+                            </span>
+                            <p  class='code-txt'>Następnie otwórzzcie konsolę, odpalcie Pythona.
                                 <br>
-                                @app.route("/")<br>
-                                def hello():<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;return "Learn Python!"<br>
-                                <br>
-                                @app.route("/show_some_text/&#60;text&#62;")<br>
-                                def show_some_text(text):<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;return text <br/>
-                                <br/>
-                                if __name__ == "__main__":<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;app.run(debug=True, use_reloader=True, port=5000)<br>
-                            </span>
-                            <p  class='code-txt'>Następnie otwórzzcie konsolę, znajdzcie swój plik (np. app.py) i za pomocą komendy python app.py uruchomcie go:.
-                                <br/>   <br/>
-                            Powinnieście ujrzeć taki komunikat:
                             </p>
                             <span class="code">
-                                 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)<br>
-                                 * Restarting with stat<br>
+                                 >>> from your_file_name import db, Movie, Director<br>
+                                 >>> db.create_all()<br>
                             </span>
-                            <p  class='code-txt'>Teraz wrzućcie adres http://127.0.0.1:5000/ do przeglądarki.</p>
+                            <p  class='code-txt'>Właśnie stworzyliście bazę danych z szkieletem</p>
 
-                            <p class='code-txt'>Ale jak to się stało??</p>
-                            <div class="code">
-                                <img src="{{ MEDIA_URL }}py/img/comix.jpg"/>
-                            </div>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">PyLadies</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-   <div class="portfolio-modal modal fade" id="templates" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Jak działa request?</h2>
-                            <hr class="star-primary">
-                            <p class='code-txt'>Stwórzcie plik z rozszerzeniem .py a następnie wklejcie do niego poniższy kod:</p>
-                            <span class="code">
-                                from flask import render_to_template <br>
-                                <br>
-                                @app.route("/")<br>
-                                def hello():<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;return render_to_template("index.html", text='Learn Python!')
-
-                            </span>
-                            <p  class='code-txt'>Teraz potrzebny będzie folder "templates" w którym wtorzymy plik "index.html"
-                            </p>
-                            <span class="code">
-                                 
-                                &#60;!DOCTYPE html&#62; <br>
-                                    &#60;html&#62; <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&#60;head&#62; <br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;meta charset="UTF-8"&#62; <br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;title&#62;Title of the document&#60;/title&#62; <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&#60;/head&#62; <br>
-                                        &#60;body&#62; <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;{{ text }}
-                                        <br>
-                                        &#60;/body&#62; <br>
-                                    &#60;/html&#62;<br>
-                            </span>
-                            <p  class='code-txt'>Za pomocą znaczników {} można również używać pętli i warunków</p>
-                            <p class="code=txt">Jeżeli do renderwoanej templatki dołączymy listę</p>
+                            <p class='code-txt'>Czas wypełnić ją danymi!</p>
 
                             <span class="code">
-                                from flask import render_to_template <br>
-                                <br>
-                                @app.route("/")<br>
-                                def hello():<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;return render_to_template("index.html", lst='[1, 2, 3, 4, 5]')
-
+                                 new_director = Director(name='Terry Jones', year_of_birth=1942, alive=True)<br>
+                                 db.session.add(new_director)<br>
+                                 db.session.commmit()<br>
                             </span>
 
+                            <p class='code-txt'>usuwanie filmów:</p>
                             <span class="code">
-                                    &#60;!DOCTYPE html&#62; <br>
-                                    &#60;html&#62; <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&#60;head&#62; <br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;meta charset="UTF-8"&#62; <br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;title&#62;Title of the document&#60;/title&#62; <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&#60;/head&#62; <br>
-                                        &#60;body&#62; <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; even <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  odd<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#60;br&#62; <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <br>
-                                        &#60;/body&#62; <br>
-                                    &#60;/html&#62;<br>
+
+                                 db.session.delete(new_director)<br>
+                                 db.session.commmit()<br>
                             </span>
 
-                            <p class="code-txt">Otrzymamy</p>
+                            <p class='code-txt'>wyszukiwanie:</p>
                             <span class="code">
-                                1 odd <br>
-                                2 even <br>
-                                3 odd <br>
-                                4 even <br>
-                                5 odd <br>
+                                 Director.query.filter(Director.name == 'Terry Jones', Director.year_of_birth <= 1950).all()
                             </span>
 
-                          
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">PyLadies</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-       <div class="portfolio-modal modal fade" id="forms" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Więcej o requestcie</h2>
-                            <hr class="star-primary">
-                            <p class='code-txt'>Gdy Flask otrzymuje request może wydobyć z niego znacznie więcej niż sam adres URL.
-                            Np "metodę" requesty mają m.in metodę GET lub POST. Ta pierwsza jest używana w klasycznych akcjach jak np odpalenie adresu z okna przeglądarki.  
-                            </p>
-                            <p class='code-txt'>
-                                Poza standardowym sposobem przekazania danych przez request (te litery między / ) można do niego dodwać dane które mogą, lecz nie muszą być obsłużonę przez aplikację.
-                            </p>
+                             <p class='code-txt'>Sortowanie:</p>
                             <span class="code">
-                                .../movie/1?year=2001 <br>'''taki request przekazuje nam poza wcześniej zdefinowaną wartością (1) dodatkowy parametr o kluczu 'year' i wartości 2001 (prawie jak w słownikach)''' <br>
-
-                                from flask import request <br>
-                                <br>
-                                @app.route("/")<br>
-                                def hello():<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;print request.args.get('year')<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp; #2001
+                                 Director.query.filter(Director.year_of_birth <= 1950).order_by(Director.name).all()
                             </span>
-                            
-
-                            <p class="code-txt">
-                                Przykłady formularz w HTMLu
-                            </p>
+                            <p class='code-txt'>Odwrotnie:</p>
                             <span class="code">
-                                &#60;form action="/some_address" method='post'&#62; <br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&#60;input type="text" name="firstname" &#62; <br> 
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&#60;input type="text" name="lastname"&#62;<br>
-
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&#60;input type="submit" value="Submit"&#62;<br>
-                                &#60;/form&#62;
+                                 from sqlalchemy import desc
+                                 Director.query.filter(Director.year_of_birth <= 1950).order_by(desc(Director.name)).all()
                             </span>
-                            <p class="code-txt">
-                                Do danych z requesta typu POST możemy się dostać przez: request.form['firstname']
-                            </p>
+
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
