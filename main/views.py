@@ -30,14 +30,12 @@ def home(request):
     v['tags'] = Tag.objects.all()
     v['top_posts'] = Post.objects.all().order_by('score')
     v['tag_url'] = tag
-    return render(request, 'index.html', v)
+    return render(request, 'pytrening.html', v)
 
 
 def article(request):
     slug = request.GET.get('id', '')
     if slug:
-
-
             v = dict()
             v['tags'] = Tag.objects.all()
             v['top_posts'] = Post.objects.all().order_by('score')

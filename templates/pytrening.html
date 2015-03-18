@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PyTrening - Alchemy</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="{{ MEDIA_URL }}py/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ MEDIA_URL }}py/css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ MEDIA_URL }}py/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">PyLadies</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    
+                    <li class="page-scroll">
+                        <a href="#step1">Zadanie 1</a>
+                    </li>
+
+                    <li class="page-scroll">
+                        <a href="#step2">Zadanie 2</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#step3">Zadanie 3</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#step4">Zadanie 4</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#step5">Zadanie 5</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="{{ MEDIA_URL }}py/img/alchemy.png" alt="">
+                    <div class="intro-text">
+                        <span class="name">PyTrening z PyLadies #3.1</span>
+                        <hr class="star-light">
+                        <span class="skills">Alchemy, czyli bazy danych bez SQLa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Portfolio</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#request" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{ MEDIA_URL }}py/img/pylady_geek.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#templates" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{ MEDIA_URL }}py/img/jinja.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#forms" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{ MEDIA_URL }}py/img/form.jpg" class="img-responsive" alt="">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- step1 -->
+    <section class="success" id="step1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Zadanie 1</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 col-lg-offset-2">
+                    <p>
+                        Dodaj do swojej bazy ulubionego reżysera <br>
+                        Następnie dodaj dowolny film tego reżysera <br>
+
+                        Ciekawostka: Urodzony w 1950r reżyser John Landis w 1980 nakręsił musical Blues Brothers 
+                    </p>
+                </div>
+
+                 <div class="col-lg-9 col-lg-offset-2">
+                    <p>
+                        W plikach movies.py i directors.py znajduje się lista filmów i reżyserów. <br>
+                        Pobierz je do folderu w którym znajduje się Twój skrypt<br>
+                        Zaimportuj obie listy (np from movies import movies)<br>
+                        A teraz napisz funkcję która doda reżyserów do bazy (wszystkich)<br>
+                        Teraz dodaj fillmy, pamiętaj że każdy film ma reżysera którego trzeba z nim połączyć
+                    </p>
+                </div>
+
+               
+                
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- step1 -->
+    <section class="success white" id="step2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Zadanie 2</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 col-lg-offset-2">
+                    <p>
+                        Usuń z bazy film Django Unchained ... bo tak.
+                    </p>
+                </div>
+           
+                
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- About Section -->
+    <section class="success" id="step3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Zadanie 3 - Wyszukiwanie </h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 col-lg-offset-2">
+                    <p>
+
+                        Wszystkie dramaty <br>
+                        Wszystkie filmy wyprodukowane w latach parzystych <br/>
+                        Wyszukaj wszystkie filmy Stanleya Kubricka <br>
+                        Wszystkie dramaty  wyprodukowane w latach nieparzystych <br>
+
+                    </p>
+                </div>
+
+                
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="success white" id="step4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Zadanie 4 Sortowanie</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 col-lg-offset-2">
+                    <p>
+                        Wyświetl wszystkie filmy w chronologicznej kolejności <br>
+                        Wyświetl najstarszych żyjących reżyserów <br>
+                        Wyświetl reżyserów posortowanych względem ilości fimów <br>
+                    </p>
+                </div>
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="https://docs.python.org/2/library/datetime.html" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Hint
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="success hard" id="step5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Zadanie 5 </h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 col-lg-offset-2">
+                    <p>
+                        Znajdź wszystkich reżyserów który żyją ponad 3285000000 sekund :D
+                    </p>
+                </div>
+                
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="#" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Hint
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Przemysław Pietrzak
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="request" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Jak działa request?</h2>
+                            <hr class="star-primary">
+                            <p class='code-txt'>Stwórzcie plik z rozszerzeniem .py a następnie wklejcie do niego poniższy kod:</p>
+                            <span class="code">
+                                from flask import Flask<br>
+                                app = Flask(__name__)<br>
+                                <br>
+                                @app.route("/")<br>
+                                def hello():<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;return "Learn Python!"<br>
+                                <br>
+                                @app.route("/show_some_text/&#60;text&#62;")<br>
+                                def show_some_text(text):<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;return text <br/>
+                                <br/>
+                                if __name__ == "__main__":<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;app.run(debug=True, use_reloader=True, port=5000)<br>
+                            </span>
+                            <p  class='code-txt'>Następnie otwórzzcie konsolę, znajdzcie swój plik (np. app.py) i za pomocą komendy python app.py uruchomcie go:.
+                                <br/>   <br/>
+                            Powinnieście ujrzeć taki komunikat:
+                            </p>
+                            <span class="code">
+                                 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)<br>
+                                 * Restarting with stat<br>
+                            </span>
+                            <p  class='code-txt'>Teraz wrzućcie adres http://127.0.0.1:5000/ do przeglądarki.</p>
+
+                            <p class='code-txt'>Ale jak to się stało??</p>
+                            <div class="code">
+                                <img src="{{ MEDIA_URL }}py/img/comix.jpg"/>
+                            </div>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">PyLadies</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="portfolio-modal modal fade" id="templates" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Jak działa request?</h2>
+                            <hr class="star-primary">
+                            <p class='code-txt'>Stwórzcie plik z rozszerzeniem .py a następnie wklejcie do niego poniższy kod:</p>
+                            <span class="code">
+                                from flask import render_to_template <br>
+                                <br>
+                                @app.route("/")<br>
+                                def hello():<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;return render_to_template("index.html", text='Learn Python!')
+
+                            </span>
+                            <p  class='code-txt'>Teraz potrzebny będzie folder "templates" w którym wtorzymy plik "index.html"
+                            </p>
+                            <span class="code">
+                                 
+                                &#60;!DOCTYPE html&#62; <br>
+                                    &#60;html&#62; <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&#60;head&#62; <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;meta charset="UTF-8"&#62; <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;title&#62;Title of the document&#60;/title&#62; <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&#60;/head&#62; <br>
+                                        &#60;body&#62; <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;{{ text }}
+                                        <br>
+                                        &#60;/body&#62; <br>
+                                    &#60;/html&#62;<br>
+                            </span>
+                            <p  class='code-txt'>Za pomocą znaczników {} można również używać pętli i warunków</p>
+                            <p class="code=txt">Jeżeli do renderwoanej templatki dołączymy listę</p>
+
+                            <span class="code">
+                                from flask import render_to_template <br>
+                                <br>
+                                @app.route("/")<br>
+                                def hello():<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;return render_to_template("index.html", lst='[1, 2, 3, 4, 5]')
+
+                            </span>
+
+                            <span class="code">
+                                    &#60;!DOCTYPE html&#62; <br>
+                                    &#60;html&#62; <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&#60;head&#62; <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;meta charset="UTF-8"&#62; <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60;title&#62;Title of the document&#60;/title&#62; <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&#60;/head&#62; <br>
+                                        &#60;body&#62; <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; even <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  odd<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#60;br&#62; <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <br>
+                                        &#60;/body&#62; <br>
+                                    &#60;/html&#62;<br>
+                            </span>
+
+                            <p class="code-txt">Otrzymamy</p>
+                            <span class="code">
+                                1 odd <br>
+                                2 even <br>
+                                3 odd <br>
+                                4 even <br>
+                                5 odd <br>
+                            </span>
+
+                          
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">PyLadies</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <div class="portfolio-modal modal fade" id="forms" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Więcej o requestcie</h2>
+                            <hr class="star-primary">
+                            <p class='code-txt'>Gdy Flask otrzymuje request może wydobyć z niego znacznie więcej niż sam adres URL.
+                            Np "metodę" requesty mają m.in metodę GET lub POST. Ta pierwsza jest używana w klasycznych akcjach jak np odpalenie adresu z okna przeglądarki.  
+                            </p>
+                            <p class='code-txt'>
+                                Poza standardowym sposobem przekazania danych przez request (te litery między / ) można do niego dodwać dane które mogą, lecz nie muszą być obsłużonę przez aplikację.
+                            </p>
+                            <span class="code">
+                                .../movie/1?year=2001 <br>'''taki request przekazuje nam poza wcześniej zdefinowaną wartością (1) dodatkowy parametr o kluczu 'year' i wartości 2001 (prawie jak w słownikach)''' <br>
+
+                                from flask import request <br>
+                                <br>
+                                @app.route("/")<br>
+                                def hello():<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;print request.args.get('year')<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp; #2001
+                            </span>
+                            
+
+                            <p class="code-txt">
+                                Przykłady formularz w HTMLu
+                            </p>
+                            <span class="code">
+                                &#60;form action="/some_address" method='post'&#62; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&#60;input type="text" name="firstname" &#62; <br> 
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&#60;input type="text" name="lastname"&#62;<br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&#60;input type="submit" value="Submit"&#62;<br>
+                                &#60;/form&#62;
+                            </span>
+                            <p class="code-txt">
+                                Do danych z requesta typu POST możemy się dostać przez: request.form['firstname']
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="{{ MEDIA_URL }}py/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ MEDIA_URL }}py/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="{{ MEDIA_URL }}py/js/jqBootstrapValidation.js"></script>
+    <script src="{{ MEDIA_URL }}py/js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ MEDIA_URL }}py/js/freelancer.js"></script>
+
+</body>
+
+</html>

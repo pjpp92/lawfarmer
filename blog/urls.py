@@ -12,16 +12,16 @@ SLUG = '(?P<slug>.+)'
 admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', home, name='home'),
-    url(r'^article$', article, name='article'),
-    url(r'^about$', flatblock, {'block':'about'}, name='about'),
-    url(r'^contact', flatblock, {'block':'contact'}, name='contact'),
-    url(r'^author', flatblock, {'block':'author'}, name='author'),
+    #url(r'^article$', article, name='article'),
+    #url(r'^about$', flatblock, {'block':'about'}, name='about'),
+    #url(r'^contact', flatblock, {'block':'contact'}, name='contact'),
+    #url(r'^author', flatblock, {'block':'author'}, name='author'),
 
-    url(r'^admin/filebrowser/', include(site.urls)),
-    url(r'^tinymce/', include('tinymce.urls')),
-    url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),
-    url(r'^grappelli/', include('grappelli.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    #url(r'^admin/filebrowser/', include(site.urls)),
+    #url(r'^tinymce/', include('tinymce.urls')),
+    #url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),
+    #url(r'^grappelli/', include('grappelli.urls')),
+    #url(r'^admin/', include(admin.site.urls)),
 )
 
 urlpatterns += patterns('',
